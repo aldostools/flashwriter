@@ -822,7 +822,7 @@ function triggerX()
 {
     document.getElementById("init").disabled = true;
     setTimeout(trigger,50,jump_1_addr);
-    showResult("<h3>Checking minimum firmware version...</h3>");
+    showResult("<h3>Checking VSH...</h3>");
     setTimeout(minVer,3000);
     t_out=0;
     total_loops=0;
@@ -843,7 +843,6 @@ function checkVsh()
 }
 function minVer()
 {
-    showResult("<h3>Checking VSH...</h3>");
     vshchk=checkMemory(0x8A500000,0x302000,0x302000);
     setTimeout(checkVsh,10000);
 }
