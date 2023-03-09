@@ -7,8 +7,6 @@ table, th, td {
 <center>
   <h1><span style='color:red'>PS3 NOR/NAND Flash Writer 4.90 (Unofficial)</span></h1>
   <h2>Thanks to: PS3Xploit Team, Evilnat, kostirez1, littlebalup, Joonie</h2>
-  <h3><span style='color:red'>*** DO NOT USE THIS HOST YET, IS UNDER TESTS AND IT IS FOR PERSONAL USE ***</span></h3>
-  <h3><span style='color:red'>*** NOT COMPATIBLE WITH PS3 3000!! ***</span></h3>
   <hr>
     <div id="dropdown">
     <h3>Select USB Flash Dumping Device</h3>
@@ -822,7 +820,7 @@ function triggerX()
 {
     document.getElementById("init").disabled = true;
     setTimeout(trigger,50,jump_1_addr);
-    showResult("<h3>Checking VSH...</h3>");
+    showResult("<h3>Checking minimum firmware version...</h3>");
     setTimeout(minVer,3000);
     t_out=0;
     total_loops=0;
@@ -843,8 +841,18 @@ function checkVsh()
 }
 function minVer()
 {
-    vshchk=checkMemory(0x8A500000,0x302000,0x302000);
-    setTimeout(checkVsh,10000);
+    minver=checkMemOld(0x8B000000-0x8,0x100,0x100,10);
+    minver=s2hex(minver).toString().slice(3, 8).replace("00",".");
+    if(parseFloat(minver.toString())>3.56)
+    {
+        showResult("<h3><span style='color:red'>You cannot use this tool because your console is incompatible with CFW!</h3></span>");
+    }
+    else
+    {
+        showResult("<h3>Checking VSH...</h3>");
+        vshchk=checkMemory(0x8A500000,0x302000,0x302000);
+        setTimeout(checkVsh,10000);
+    }
 }
 function checkPatch()
 {
