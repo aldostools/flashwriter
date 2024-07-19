@@ -901,7 +901,7 @@ function writePatch()
 	{
 		showResult('<h3>Patching '+ftype+' flash memory...<br>This may take a few minutes. <span style="color:red">Do not power off your console.</span></h3>');
 		setTimeout(trigger,50,jump_1_addr_2);
-		setTimeout(showResult,1000,"<h3><span style='color:green'>Patch operation successful!</span><br>You can now reboot your PS3 and install a custom firmware of your choice.</h3>");
+		setTimeout(showResult,1000,"<h3><span style='color:green'>Patch operation successful!</span><br>You can now reboot your PS3 and install a <a href='https://mega.nz/folder/kFNQnL4Y#d2ar9dMW8fgT-afd3ceE3A'>custom firmware</a> of your choice.</h3>");
 	}
 	else
 	{
@@ -921,7 +921,7 @@ function listener()
 }
 function HFWmsg()
 {
-	showResult("<h3><span style='color:red'>You must install Hybrid Firmware (HFW) 4.91 before using this tool!</h3></span>");
+	showResult("<h3><span style='color:red'>You must install <a href='https://mediafire.com/file/vvqd18e9emjdb44'>Hybrid Firmware (HFW) 4.91</a> before using this tool!</h3></span>");
 	throw new Error();
 }
 </script>
