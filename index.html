@@ -9,6 +9,15 @@
 	switch (uaStringCheck) {
 		case "PLAYSTATION":
 			switch (fwVersion) {
+				case "4.82":
+					window.location="482/index.html";
+					break;
+				case "4.84":
+					window.location="484/index.html";
+					break;
+				case "4.85":
+					window.location="485/index.html";
+					break;
 				case "4.90":
 					window.location="490/index.html";
 					break;
@@ -16,7 +25,7 @@
 					window.location="491/index.html";
 					break;
 				default:
-					alert('Your PS3 is not on FW 4.90 - 4.91! Your current running FW version is ' + fwVersion + ', which is not compatible with PS3Xploit Flash Writer.');
+					alert('Your PS3 is not on FW 4.82, 4.84, 4.85 or 4.90 - 4.91! Your current running FW version is ' + fwVersion + ', which is not compatible with PS3Xploit Flash Writer.');
 					window.close();
 					break;
 			}
